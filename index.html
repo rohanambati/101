@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interesting Facts About India</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #ff0080, #ff8c00, #40e0d0);
+            color: #fff;
+            text-shadow: 0 0 5px #000;
+        }
+
+        #factContainer {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            backdrop-filter: blur(5px);
+            transform: perspective(600px) rotateX(0deg);
+            transition: transform 0.5s;
+        }
+
+        #factContainer:hover {
+            transform: perspective(600px) rotateX(20deg);
+        }
+
+        button {
+            background-color: #ff0080;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 4px 2px;
+            cursor: pointer;
+            border-radius: 4px;
+            box-shadow: 0 0 10px #ff8c00;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ff8c00;
+            box-shadow: 0 0 20px #ff8c00;
+        }
+    </style>
+</head>
+<body>
+    <div id="factContainer">
+        <h1>Interesting Fact About India</h1>
+        <p id="fact"></p>
+        <button onclick="generateFact()">Discover More!</button>
+    </div>
+    <script>
+        const facts = [
+            "India is the world's largest democracy with over 1.3 billion people.",
+            "India has the second-largest number of internet users in the world.",
+            "Bollywood, India's film industry, is the largest in the world in terms of film production.",
+            "India was the first country to mine diamonds, starting as early as the 4th century BC.",
+            "Chess was invented in India, originally known as 'Chaturanga'.",
+            "India is home to the ancient Indus Valley Civilization, one of the world's oldest urban cultures.",
+            "The Indian railway system is one of the largest and busiest in the world, transporting over eight billion passengers each year.",
+            "Yoga originated in India and has been practiced for over 5,000 years."
+        ];
+
+        function generateFact() {
+            const fact = facts[Math.floor(Math.random() * facts.length)];
+            document.getElementById('fact').innerText = fact;
+        }
+
+        window.onload = generateFact; // Generate the first fact on load
+    </script>
+</body>
+</html>
